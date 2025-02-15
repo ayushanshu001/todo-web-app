@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Todo Web App with Kanban Board
+
+This is a Todo Web App built using Next.js, Prisma, and PostgreSQL, with a Kanban board interface to manage tasks. The app supports CRUD operations, drag-and-drop functionality for task status changes, and user authentication using NextAuth.
+
+## Features
+
+- **Kanban Board**: Tasks can be managed in three columns — To-Do, In Progress, and Done.
+- **CRUD Operations**: Create, Read, Update, and Delete tasks.
+- **Drag-and-Drop**: Move tasks between different status columns (To-Do, In Progress, Done).
+- **Task Details**: Each task has a title, description, priority, status, and due date.
+- **User Authentication**: Secure login system using NextAuth for authentication.
+- **Dark Mode**: Full support for dark mode using Tailwind CSS.
+- **Database Integration**: Uses PostgreSQL database for task storage and Prisma ORM for database management.
+
+## Requirements
+
+Before running the project, make sure you have the following installed:
+
+- **Node.js** (v14 or later)
+- **PostgreSQL**: Make sure you have PostgreSQL installed locally or use a cloud PostgreSQL database.
+- **Prisma CLI**: Used for database setup, schema migrations, and Prisma client generation.
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the Repository
+
+Clone the repository to your local machine:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+git clone https://github.com/your-username/todo-web-app.git
+cd todo-web-app
