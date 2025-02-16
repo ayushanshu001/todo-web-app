@@ -6,8 +6,8 @@ import TaskEditModal from './TaskEditModal';
 
 const KanbanBoard = () => {
   const [tasks, setTasks] = useState({ 'to-do': [], 'in-progress': [], 'done': [] });
-  const [selectedTask, setSelectedTask] = useState(null);  // To store selected task for editing
-  const [isModalOpen, setIsModalOpen] = useState(false);  // Control modal visibility
+  const [selectedTask, setSelectedTask] = useState(null); 
+  const [isModalOpen, setIsModalOpen] = useState(false); 
 
   useEffect(() => {
     const storedTasks = JSON.parse(localStorage.getItem('tasks')) || { 'to-do': [], 'in-progress': [], 'done': [] };
@@ -38,7 +38,6 @@ const KanbanBoard = () => {
       updatedTasks[column] = updatedTasks[column].filter((task) => task.id !== taskId);
     }
 
-    // Add the task to the correct column based on the updated status
     const updatedColumn = updatedTask.status.toLowerCase().replace(' ', '-');
     updatedTasks[updatedColumn].push(updatedTask);
 
@@ -53,7 +52,6 @@ const KanbanBoard = () => {
     const sourceColumn = source.droppableId;
     const destinationColumn = destination.droppableId;
 
-    // No change if the task is dropped in the same column and same position
     if (sourceColumn === destinationColumn && source.index === destination.index) {
       return;
     }
@@ -61,10 +59,8 @@ const KanbanBoard = () => {
     const sourceTasks = Array.from(tasks[sourceColumn]);
     const destinationTasks = Array.from(tasks[destinationColumn]);
 
-    // Remove the task from the source column
     const [movedTask] = sourceTasks.splice(source.index, 1);
 
-    // Add the task to the destination column
     destinationTasks.splice(destination.index, 0, movedTask);
 
     setTasks((prev) => ({

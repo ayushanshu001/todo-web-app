@@ -1,15 +1,12 @@
-// app/api/tasks/[id]/route.js
 
-import prisma from "@/lib/prisma";  // Import Prisma client
-
-// Fetch task by ID
+import prisma from "@/lib/prisma";
 export async function GET(req, { params }) {
   const { id } = params;
 
   try {
     const task = await prisma.task.findUnique({
       where: { id },
-      include: { user: true }, // Include user details if needed
+      include: { user: true },
     });
 
     if (!task) {
@@ -29,7 +26,6 @@ export async function GET(req, { params }) {
   }
 }
 
-// Update task by ID
 export async function PATCH(req, { params }) {
   const { id } = params;
   const { title, description, status, priority, dueDate } = await req.json();
@@ -56,7 +52,6 @@ export async function PATCH(req, { params }) {
   }
 }
 
-// Delete task by ID
 export async function DELETE(req, { params }) {
   const { id } = params;
 

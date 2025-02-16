@@ -23,12 +23,11 @@ export default function Navbar() {
 
   return (
     <nav className="flex justify-between items-center px-6 py-4 bg-white shadow-md dark:bg-gray-900 dark:shadow-lg text-black dark:text-white">
-      {/* Logo */}
+
       <Link href="/" className="text-xl font-bold">
         Todo App
       </Link>
 
-      {/* Navigation Links */}
       <div className="flex items-center gap-4">
         {session ? (
           <>
@@ -51,8 +50,6 @@ export default function Navbar() {
             </Link>
           </>
         )}
-
-        {/* Dark Mode Toggle */}
         <button
           onClick={toggleDarkMode}
           className="p-2 rounded bg-gray-200 dark:bg-gray-700"
