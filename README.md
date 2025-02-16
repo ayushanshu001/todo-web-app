@@ -29,3 +29,37 @@ Clone the repository to your local machine:
 ```bash
 git clone https://github.com/your-username/todo-web-app.git
 cd todo-web-app
+
+## Install Dependencies
+
+npm install
+# or
+yarn install
+
+3. Set Up PostgreSQL Database
+Ensure you have a PostgreSQL database running. You can set up a local PostgreSQL server or use a cloud PostgreSQL provider like Heroku or ElephantSQL.
+
+Create a .env file at the root of your project and configure the following environment variables:
+
+DATABASE_URL="postgresql://USER:PASSWORD@localhost:5432/todo-web-app?schema=public"
+NEXTAUTH_SECRET=your-secret-key
+NEXTAUTH_URL=http://localhost:3000
+
+Replace USER and PASSWORD with your PostgreSQL credentials. Make sure the database todo-web-app exists, or you can create it manually in your PostgreSQL instance.
+
+4. Set Up Prisma
+Prisma is used to interact with your database. After configuring the database, you need to run Prisma migrations to set up the database schema.
+
+Run the following command to generate the Prisma client:
+
+npx prisma migrate dev
+
+
+5. Start the Development Server
+Now that everything is set up, you can start the development server:
+
+npm run dev
+# or
+yarn dev
+
+
