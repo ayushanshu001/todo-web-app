@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import TaskCard from './TaskCard';
 import TaskForm from './TaskForm';
-import TaskEditModal from './TaskEditModal';  // New Modal for editing tasks
+import TaskEditModal from './TaskEditModal'; 
 
 const KanbanBoard = () => {
   const [tasks, setTasks] = useState({ 'to-do': [], 'in-progress': [], 'done': [] });
